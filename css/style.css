@@ -1,0 +1,200 @@
+/*selettore universale e font*/
+* {
+	font-family: 'Overpass', sans-serif;
+}
+/*togliero bordo al boby per evitare la cornice*/
+body {
+	margin: 0;
+}
+/*HEADER menù di navigazione maiuscolo, senza sottolineato e con sfondo nero*/
+.logo image {
+	max-width: 90px;
+}
+
+header {
+	/*position: sticky; /*rendere l'header della pagina fisso*/
+	z-index: 1;/*per portarlo sopra e renderlo più grande*/
+	position: fixed;
+	width: 100%;
+	background-color:rgba(238, 241, 244, 0.9); /*inserire uno sfondo opaco  (trasparente) all'header*/
+	top: 0;
+	display: flex; /*per allineare logo e menù*/
+	align-items: center; /*per allineare al centro dell'heaer il menù*/
+	justify-content: space-between;
+	padding: 5px 50px;
+}
+
+/*menu di navigazione */
+nav a {
+	text-transform: uppercase; /*maiuscolo*/
+	text-decoration: none; /*no sottolineato*/
+	color:  #3a3a3a; /*colore rosso*/
+	font-weight: bold;
+	margin-right: 50px;
+}
+
+/*animazione menù*/
+nav a:hover{
+color: #838383;
+}
+/*MAIN inserisco un immagine a tutta pagina con 50% altezza con call to action*/
+.slide {
+	background-image: url("../img/bg.jpg");
+	background-size: cover;
+	height: 70vh;
+	position: relative;
+}
+
+/*mettere una trasparenza sull'immagine iniziale*/
+.slide:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(26, 26, 26, 0.2);
+}
+
+/*call to action posizionata al centro*/
+.cta {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+	margin-top: 20px;
+	color: rgb(133, 133, 133);
+}
+
+/*pulsatnte call to action non sottolineata di colore bianco e sfondo preso dal logo con font bold*/
+.cta a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	background-color: #000000;
+  padding: 15px 20px;
+  /*border-radius: 20px; pulsante arrotondato*/
+	font-weight: bold;
+	border: 2px solid #000000;
+}
+/*ANIMAZIONE cambio del cta al passaggio del mouse*/
+.cta a:hover{
+background-color: rgba(238, 241, 244);
+color: #3a3a3a;
+}
+
+/*FONT cambiamo il font font sanza grazie*/
+/*testo allineato al centro */
+.intro_text {
+	text-align: center;
+	color: #3a3a3a;
+	margin: 50px 0; /*padding: 30px 0 nel caso non piaccia*/
+	border-bottom: 2px solid  #949494;
+	padding: 20px;
+	}
+
+.intro_text2 {
+	text-align: center;
+	color: #3a3a3a;
+	text-transform: uppercase;
+	font-weight: bold;
+	}
+
+/*box immagini con tiolo*/
+.container_box {
+	display: flex;
+	margin: 50px 50px;
+}
+
+.box {
+	flex: 1;
+	padding: 20px;/*elementi posti tutti al centro*/
+	text-align: left;
+}
+
+.box img {
+	width: 60%;
+	margin: 50px 50px;
+	border-radius: 500px;
+}
+
+/*box modificato con immagini e testo*/
+.box a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: rgba(238, 241, 244);
+	background-color: #3a3a3a;
+	padding: 10px 20px;
+	/*border-radius: 20px;*/
+	font-weight: bold;
+	border: 2px solid  #3a3a3a;
+	margin-top: 20px;
+	display: inline-block; /*se non fuonziona*/
+}
+
+/*animazione*/
+.box a:hover {
+	color: #3a3a3a;
+	background-color: rgba(238, 241, 244);
+}
+
+/*inserre un backbruond di colore pieno, classe display flex con box con riga a ameta*/
+.bg_red {
+	background-color: #3a3a3a;
+	display: flex;
+	padding: 30px 0;
+}
+/*applica la regola ai div contacts e maps (bg_red)*/
+.bg_red > div {
+	flex: 1;
+	padding: 50px;
+}
+
+/*grafica contatti etichetta*/
+.contacts label {
+	color: white;
+	width: 100%;
+	display: inline-block; /*attivare il 100%*/
+	text-align: center
+}
+
+/*stessa cosa aelemento input di contatti*/
+.contacts input,
+.contacts textarea {
+	width: 100%;
+	border-radius: 20px;
+	border: 1px solid #3a3a3a;
+	padding: 5px 10px;
+	box-sizing: border-box;/*sottrai i padding per non sbordare*/
+	margin-bottom: 20px;
+}
+
+footer {
+	display: flex;
+}
+.col_footer {
+	flex: 1;
+}
+.col_footer:nth-child(2) {
+    text-align: center;
+}
+.col_footer:nth-child(3) {
+    text-align: right;
+}
+
+/*responsive per device solo per smartphone*/
+@media only screen and (max-width: 678px) {
+    .container_box,
+    .bg_red,
+    footer {
+        flex-direction: column;
+    }
+    .box {
+        border-bottom: 1px solid #000
+    }
+    .col_footer:nth-child(2),
+    .col_footer:nth-child(3) {
+        text-align: left;
+    }
+}
